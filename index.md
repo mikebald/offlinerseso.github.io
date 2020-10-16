@@ -1,4 +1,4 @@
-Offliners ESO Guide Repository
+Offliners ESO Online Repository
 ===
  Note: All information contained here is the opinion of The Offliners and should be accepted as opinion.
 
