@@ -5,7 +5,7 @@ Templar Healer PvP Guide - By @mikebald
 Skills
 ------
 
-  ## Resto Staff
+  ### Resto Staff
 
    [![Radiating Regeneration](images/ability_restorationstaff_002a.png)](https://eso-hub.com/en/skills/weapon/restoration-staff/radiating-regeneration)
    Radiating Regeneration - keeping this HoT up all the time is quite useful. It's duration is 10 seconds and it's easy to keep it up 100% of the time.
@@ -16,7 +16,7 @@ Skills
    [![Illustrious Healing](images/ability_restorationstaff_004b.png)](https://eso-hub.com/en/skills/weapon/restoration-staff/illustrious-healing)
    Illustrious Healing - An AoE heal that's great for topping off the group, where positioning is important.
 
-  ## Guild / Alliance War
+  ### Guild / Alliance War
 
   [![Siege Weapon Shield](images/ability_ava_004_b.png)](https://eso-hub.com/en/skills/alliance-war/support/siege-weapon-shield)
   Siege Weapon Shield - Puts an AoE that protects both players and siege weapons from siege damage. Great for protections on the Ram, covering other's balistas, or when enemies decided to drop meatbags on the group.
@@ -27,7 +27,7 @@ Skills
   [![Energy Orb](images/ability_undaunted_004b.png)](https://eso-hub.com/en/skills/guild/undaunted/energy-orb)
   Energy Orb - Floating healing balls that are amazing if your allies activate the synergy. Without an ally activing the synergy it's still a decent heal-over-time, but it's true power is in the synergy.
 
-  ## Templar - Restoring Light
+  ### Templar - Restoring Light
 
   [![Breath of Life](images/ability_templar_breath_of_life.png)](https://eso-hub.com/en/skills/templar/restoring-light/breath-of-life)
   Breath of Life - a great powerful burst heal, but it's especially useful when an ally is taking damage but you can't locate them in your vacinity.
@@ -38,7 +38,7 @@ Skills
   [![Channeled Focus](images/ability_templar_channeled_focus.png)](https://eso-hub.com/en/skills/templar/restoring-light/channeled-focus)
   Channeled Focus - a small AoE whose morph restores magicka while providing Major Resolve. I use this on the ram and on flags.
 
-  ## Templar - Aedric Spear
+  ### Templar - Aedric Spear
 
   [![Aurora Javelin](images/ability_templar_ripping_spear.png)](https://eso-hub.com/en/skills/templar/aedric-spear/aurora-javelin)
   Aurora Javelin - a great quick CC skill for getting people away from you; also fun to knock them off of high places with the knockback. This can be spammed and, as a kicker, it ignores the enemy's resistances. As the damage increases based on distance, hitting someone running can also be useful.
@@ -49,7 +49,22 @@ Skills
 Strategy
 ------
 
- 
+ * Situational Awareness
+   If you're going to master one strategy, attempt to master situational awareness. As a healer it's your job to keep everyone alive, 
+   how can you do that if you're always playing catch-up? Simple answer, you can't. 
+   
+   * Situational Awareness : Where is everyone?
+	   For my gameplay, I try and keep basic track of the entire group's position and I try and predict where they'll stay. For the most part 
+	   this isn't overly challenging as most people have a specific personality. Keeping track of your group mates can be considerably harder 
+	   if you have numerous wildcards; luckily in my group the number of wildcards are quite limited, so I'm usually able to track down a player 
+	   immediately as I see their health dipping.
+   
+   * Situational Awarness : Where are they going?
+	   In addition to tracking your player's position you're also going to want to know where the group is heading. What's the use of dropping an
+	   AoE if the group is going to be moving 1 second later? If you know the group is going to be engaging an enemy, or moving toward a specific
+	   location then it's best to lead your AoE to get as much coverage as you can. 
+   
+   
 
 Resource Management
 -------------------
