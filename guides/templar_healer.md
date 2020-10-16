@@ -58,7 +58,7 @@ Strategy
    * **Situational Awarness : Where are they going?**
 	   In addition to tracking your player's position you're also going to want to know where the group is heading. What's the use of dropping an AoE if the group is going to be moving 1 second later? If you know the group is going to be engaging an enemy, or moving toward a specific location then it's best to lead your AoE to get as much coverage as you can. 
  * **Keep Moving**
-   A stationary healer is a dead healer. - Someone
+   A stationary healer is a dead healer. -Someone
    
    * **Flanking your friends**
 		I find that during a fight I'm, more often than not, constantly circling around the exterior of the group. I do this because I want to keep the group in my sights at all times, and when dealing with directional heals, such as Breath of Life, Healing Orbs, or Combat Praryer, you want to have as many group mates in front of you as possible. By circling the group, I'm mobile and I'm usually directing heals toward the heart of the group.
