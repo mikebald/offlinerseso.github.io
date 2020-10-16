@@ -49,22 +49,22 @@ Skills
 Strategy
 ------
 
- * Situational Awareness
-   If you're going to master one strategy, attempt to master situational awareness. As a healer it's your job to keep everyone alive, 
-   how can you do that if you're always playing catch-up? Simple answer, you can't. 
+ * **Situational Awareness**
+   If you're going to master one strategy, attempt to master situational awareness. As a healer it's your job to keep everyone alive, how can you do that if you're always playing catch-up? Simple answer, you can't. 
    
-   * Situational Awareness : Where is everyone?
-	   For my gameplay, I try and keep basic track of the entire group's position and I try and predict where they'll stay. For the most part 
-	   this isn't overly challenging as most people have a specific personality. Keeping track of your group mates can be considerably harder 
-	   if you have numerous wildcards; luckily in my group the number of wildcards are quite limited, so I'm usually able to track down a player 
-	   immediately as I see their health dipping.
+   * **Situational Awareness : Where is everyone?**
+	   For my gameplay, I try and keep basic track of the entire group's position and I try and predict where they'll stay. For the most part this isn't overly challenging as most people have a specific personality. Keeping track of your group mates can be considerably harder if you have numerous wildcards; luckily in my group the number of wildcards are quite limited, so I'm usually able to track down a player immediately as I see their health dipping.
    
-   * Situational Awarness : Where are they going?
-	   In addition to tracking your player's position you're also going to want to know where the group is heading. What's the use of dropping an
-	   AoE if the group is going to be moving 1 second later? If you know the group is going to be engaging an enemy, or moving toward a specific
-	   location then it's best to lead your AoE to get as much coverage as you can. 
+   * **Situational Awarness : Where are they going?**
+	   In addition to tracking your player's position you're also going to want to know where the group is heading. What's the use of dropping an AoE if the group is going to be moving 1 second later? If you know the group is going to be engaging an enemy, or moving toward a specific location then it's best to lead your AoE to get as much coverage as you can. 
+ * **Keep Moving**
+   A stationary healer is a dead healer. - Someone
    
-   
+   * **Flanking your friends**
+		I find that during a fight I'm, more often than not, constantly circling around the exterior of the group. I do this because I want to keep the group in my sights at all times, and when dealing with directional heals, such as Breath of Life, Healing Orbs, or Combat Praryer, you want to have as many group mates in front of you as possible. By circling the group, I'm mobile and I'm usually directing heals toward the heart of the group.
+		
+   * **Float like a butterfly & sting like a mosquitto**
+		I use 2 "attacks" in my rotation, one is to help synergize the group and the other is to get players away from me. My goal isn't the death of others, it's to keep my group mates alive so they can do the killing blow. If I'm attacking a player it's either to weave, build ultimate, restore resources (that's a section by itself), or to get them away from me. If you're doing the job of a DPS'er, then who is doing yours?
 
 Resource Management
 -------------------
