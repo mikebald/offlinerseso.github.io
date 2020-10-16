@@ -1,0 +1,23 @@
+<html>
+<head>
+<style>
+* {
+	background-color: black;
+	color: white;
+	font-size: 36px;
+	font-weight: bold;
+}
+p {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<p>Offliners Archival Recording <br /> Date <span id="datetime"></span></p>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+</script>
+</body>
+</html>
