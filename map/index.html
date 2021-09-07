@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<title>Offliners ESO - Cyrodiil Map</title>
+		<script type="text/javasript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" />
+		<style>
+			body {
+				background-color: #18181B;
+			}
+			.container {
+				position: relative;
+			}
+			
+			.settings {
+				position: absolute;
+				left: 820px;
+				width: 200px;
+				height: 200px;
+				border: 2px solid #464648;
+				color: #D5D5D8;
+			}
+
+			.image {
+				position: absolute;
+				width: 799px;
+				height: 740px;
+				border: 2px solid #464648;
+			}
+			
+			.imageBase {
+				z-index: 0;
+				background-image: URL('base.png')
+			}
+
+			.imageNames {
+				z-index: 1;
+				background-image: URL('names.png')
+			}
+			
+			.imageFront {
+				z-index: 2;
+				background-image: URL('front.png')
+			}
+			
+			.imageSide {
+				z-index: 3;
+				background-image: URL('front.png')
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="imageBase image"></div>
+			<div class="imageNames image"></div>
+			<div class="imageFront image"></div>
+			<div class="imageSide image"></div>
+		</div>
+		<div class="settings">
+			<input type="checkbox" id="names" onclick="$('.imageNames').toggle();" checked="checked" /><label for="names">Show Names</label> <br />
+			<input type="checkbox" id="front" onclick="$('.imageFront').toggle();" checked="checked" /><label for="front">Show Front Doors</label> <br />
+			<input type="checkbox" id="side" onclick="$('.imageSide').toggle();" checked="checked" disabled="disabled" /><label for="front">Show Side Doors</label> <br />
+		</div>
+	</body>
+</html>
