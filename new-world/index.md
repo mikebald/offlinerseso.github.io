@@ -1,7 +1,31 @@
 # Offliners Online Repository - New World
 
+## Gathering Info
+---
+### Herb Locations
+---
+| Herb Type  | Possible Locations |
+| ---------  | ---------------- |
+| Basil      | * Brightwood, [Everfall](images/herb_locations_everfall.jpg) |
+| Cinnamon   | [Cutlass Keys](images/herb_locations_cutlasskeys.jpg), [First Light](images/herb_locations_firstlight.jpg) |
+| Dill       | [Edengrove](images/herb_locations_edengrove.jpg), [First Light](images/herb_locations_firstlight.jpg), [Mourningdale](images/herb_locations_mourningdale.jpg) |
+| Garlic     | [Everfall](images/herb_locations_everfall.jpg) |
+| Ginger     | [Ebonscale Reach](images/herb_locations_ebonscalereach.jpg), [Reekwater](images/herb_locations_reekwater.jpg), [Windsward](images/herb_locations_windsward.jpg) |
+| Mint       | [Mourningdale](images/herb_locations_mourningdale.jpg), [Restless Shore](images/herb_locations_restlessshore.jpg), * Weaver's Fen, [Windsward](images/herb_locations_windsward.jpg) |
+| Nutmeg     | [First Light](images/herb_locations_firstlight.jpg), * Weaver's Fen |
+| Oregano    | [Monarch's Bluffs](images/herb_locations_monarchsbluffs.jpg), [Mourningdale](images/herb_locations_mourningdale.jpg), [Restless Shore](images/herb_locations_restlessshore.jpg) |
+| Parsley    | [Cutlass Keys](images/herb_locations__cutlasskeys.jpg), [Edengrove](images/herb_locations_edengrove.jpg), [Mourningdale](images/herb_locations_mourningdale.jpg) |
+| Peppercorn | [Cutlass Keys](images/herb_locations_cutlasskeys.jpg), [Monarch's Bluffs](images/herb_locations_monarchsbluffs.jpg),[Mourningdale](images/herb_locations_mourningdale.jpg) |
+| Saffron    | * Brightwood, [First Light](images/herb_locations_firstlight.jpg), [Mourningdale](images/herb_locations_mourningdale.jpg) |
+| Sage       | * Brightwood, [Everfall](images/herb_locations_everfall.jpg), [Reekwater](images/herb_locations_reekwater.jpg) |
+| Rosemary   | [Mourningdale](images/herb_locations_mourningdale.jpg), [Restless Shore](images/herb_locations_restlessshore.jpg) |
+| Tarragon   | * Brightwood, [Ebonscale Reach](images/herb_locations_ebonscalereach.jpg), [Reekwater](images/herb_locations_reekwater.jpg) |
+| Thyme      | [Ebonscale Reach](images/herb_locations_ebonscalereach.jpg), [Reekwater](images/herb_locations_reekwater.jpg), [Windsward](images/herb_locations_windsward.jpg) |
+| * Not Worth Even Showing |
 
-## Attribute Infographics
+## Infographics
+---
+### Attribute Infographics
 | Description   | Link |
 | ------------- |:-------------:|
 | Strength      | [?](images/attribute_strengh.jpg)      |
@@ -10,7 +34,7 @@
 | Focus         | [?](images/attribute_focus.jpg)        |
 | Constitution  | [?](images/attribute_constitution.jpg) |
 
-## Gathering Infographics
+### Gathering Infographics
 
 | Description   | Link |
 | ------------- |:-------------:|
@@ -20,7 +44,7 @@
 | Mining       | [?](images/gathering_mining.jpg)      |
 | Skinning     | [?](images/gathering_skinning.jpg)    |
 
-## Weapon Infographics
+### Weapon Infographics
 
 | Description   | Link |
 | ------------- |:-------------:|
