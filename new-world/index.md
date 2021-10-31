@@ -35,6 +35,4 @@
 ## External Links
  * Interactive Map : [NewWorld-Map.com](https://www.newworld-map.com/)
  * Territory Control Map : [NWMaps.info](https://nwmaps.info/)
- * New World Forums : [Forums.NewWorld.Com](https://forums.newworld.com/)
- * Guides & Information : [New World Fans.com](https://newworldfans.com/)
- * New World Wiki : [NewWorld.wiki.fextralife.com](https://newworld.wiki.fextralife.com/)
+ * Server Status & Population : [NewWorldStatus.com](https://newworldstatus.com/worlds)
