@@ -1,8 +1,6 @@
 # Offliners Online Repository - New World
 
-## Gathering Info
----
-### Herb Locations
+## Herb Locations
 ---
 | Herb Type  | Possible Locations |
 | ---------  | ---------------- |
@@ -35,6 +33,8 @@
 |                                                   |                                               |                                         | [War Hammer](images/weapon_warhammer.jpg)  | |
 
 ## External Links
+ * Interactive Map : [NewWorld-Map.com](https://www.newworld-map.com/)
+ * Territory Control Map : [NWMaps.info](https://nwmaps.info/)
  * New World Forums : [Forums.NewWorld.Com](https://forums.newworld.com/)
  * Guides & Information : [New World Fans.com](https://newworldfans.com/)
  * New World Wiki : [NewWorld.wiki.fextralife.com](https://newworld.wiki.fextralife.com/)
