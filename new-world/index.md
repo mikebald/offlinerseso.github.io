@@ -19,7 +19,7 @@
 | Rosemary   | [Mourningdale](images/herb_locations_mourningdale.jpg), [Restless Shore](images/herb_locations_restlessshore.jpg) |
 | Tarragon   | * Brightwood, [Ebonscale Reach](images/herb_locations_ebonscalereach.jpg), [Reekwater](images/herb_locations_reekwater.jpg) |
 | Thyme      | [Ebonscale Reach](images/herb_locations_ebonscalereach.jpg), [Reekwater](images/herb_locations_reekwater.jpg), [Windsward](images/herb_locations_windsward.jpg) |
-| * Not Worth Even Showing |
+| * Extremely Few Herbs in Region |
 
 ## Infographics
 ---
