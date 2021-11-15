@@ -23,16 +23,17 @@
 
 ## Infographics
 ---
-| Attributes   | Gathering  | Armor | Melee Weapons | Ranged Weapons |
-| ------------- |-------------| ------ | ------- | ------ |
-| [Strength](images/attribute_strengh.jpg)          | [Fishing](images/gathering_fishing.jpg)       | [Armor Stats](images/armor_stats.png)   | [Great Axe](images/weapon_greataxe.jpg)   | [Bow](images/weapon_bow.jpg) |
-| [Dexterity](images/attribute_dexterity.jpg)       | [Harvesting](images/gathering_harvesting.jpg) | [Armor Weights](images/armor_weight.png) | [Hatchet](images/weapon_hatchet.jpg)      | [Fire Staff](images/weapon_firestaff.jpg) | 
-| [Intelligence](images/attribute_intelligence.jpg) | [Lumbering](images/gathering_lumbering.jpg)   |                                         | [Rapier](images/weapon_rapier.jpg) | [Ice Gauntlet](images/weapon_icegauntlet.jpg) |
-| [Focus](images/attribute_focus.jpg)               | [Mining](images/gathering_mining.jpg)         |                                         | [Spear](images/weapon_spear.jpg)   | [Life Staff](images/weapon_lifestaff.jpg) | 
-| [Constitution](images/attribute_constitution.jpg) | [Skinning](images/gathering_skinning.jpg)     |                                         | [Sword and Shield](images/weapon_swordandshield.jpg) | [Mustket](images/weapon_musket.jpg) |
-|                                                   |                                               |                                         | [War Hammer](images/weapon_warhammer.jpg)  | |
+| Attributes   | Gathering  | Armor | Melee Weapons | Ranged Weapons | Misc |
+| ------------- |-------------| ------ | ------- | ------ | ------ |
+| [Strength](images/attribute_strengh.jpg)          | [Fishing](images/gathering_fishing.jpg)       | [Armor Stats](images/armor_stats.png)            | [Great Axe](images/weapon_greataxe.jpg)              | [Bow](images/weapon_bow.jpg)                   | [Provisioning Crates](images/info_provisioncrates.png)
+| [Dexterity](images/attribute_dexterity.jpg)       | [Harvesting](images/gathering_harvesting.jpg) | [Armor Weights](images/armor_weight.png)         | [Hatchet](images/weapon_hatchet.jpg)                 | [Fire Staff](images/weapon_firestaff.jpg)      | [Gearscore Farming](images/info_gearscorelocations.jpg)
+| [Intelligence](images/attribute_intelligence.jpg) | [Lumbering](images/gathering_lumbering.jpg)   | [Gathering Sets](images/info_gatheringsets.png)  | [Rapier](images/weapon_rapier.jpg)                   | [Ice Gauntlet](images/weapon_icegauntlet.jpg)  | [Territory Bonuses](images/info_territorybonuses.png)
+| [Focus](images/attribute_focus.jpg)               | [Mining](images/gathering_mining.jpg)         |                                                  | [Spear](images/weapon_spear.jpg)                     | [Life Staff](images/weapon_lifestaff.jpg)      | 
+| [Constitution](images/attribute_constitution.jpg) | [Skinning](images/gathering_skinning.jpg)     |                                                  | [Sword and Shield](images/weapon_swordandshield.jpg) | [Mustket](images/weapon_musket.jpg)            |
+|                                                   |                                               |                                                  | [War Hammer](images/weapon_warhammer.jpg)            |                                                |
 
 ## External Links
  * Interactive Map : [NewWorld-Map.com](https://www.newworld-map.com/)
+ * Gear Score Tracker : [GearScore.app](https://gearscore.app)
  * Territory Control Map : [NWMaps.info](https://nwmaps.info/)
  * Server Status & Population : [NewWorldStatus.com](https://newworldstatus.com/worlds)
