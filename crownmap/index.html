@@ -1,0 +1,275 @@
+<html>
+	<head>
+		<title>Offliners ESO - Interactive Cyrodiil Map</title>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+		<script>
+		const ws = new WebSocket("ws://198.199.115.211:8080");
+		ws.addEventListener("open", () =>{
+		  console.log("Connected to WebSocket");
+		});
+		 
+		ws.addEventListener('message', function (event) {
+			var string_arr =JSON.parse(event['data']).data;
+			var string = "";
+
+			string_arr.forEach(element => {
+				string+=String.fromCharCode(element);
+			});
+        
+			var obj = JSON.parse(string);
+			SetPosition(obj);
+		});
+		
+		function SetPosition(PositionObj) {
+			var xPos = PositionObj["x"],
+				yPos = PositionObj["y"],
+				angle = PositionObj["angle"],
+				crownObj = $("#crown"),
+				arrowObj = $("#crown_arrow"),
+				angleObj = GetAngleString(angle);
+
+			crownObj.offset({ "top": yPos, "left": xPos });
+			SetArrowPosition( arrowObj, xPos, yPos, angleObj );
+		}
+		
+		function SetArrowPosition(ArrowObj, xPos, yPos, AngleObj) {
+			var angleAdjustment = [ 
+					{"x": 9, 	"y": -25, 	"Angle": -90},
+					{"x": 40, 	"y": 7, 	"Angle": 0},
+					{"x": -25, 	"y": 7, 	"Angle": 180},
+					{"x": 9, 	"y": 40, 	"Angle": 90},
+					{"x": 24, 	"y": -20,	"Angle": -45},
+					{"x": -20, 	"y": -20,	"Angle": -135},
+					{"x": 26, 	"y": 22,	"Angle": 45},
+					{"x": -22, 	"y": 24,	"Angle": 135}
+				],
+				yAdjustment = 0, xAdjustment = 0;				
+
+			adjustmentObj = _.find(angleAdjustment, function(obj) { return obj["Angle"] === AngleObj["Angle"]; });
+			
+			if(typeof adjustmentObj !== "undefined") {
+				xAdjustment = adjustmentObj["x"];
+				yAdjustment = adjustmentObj["y"];
+			}
+
+			ArrowObj.removeClass();
+			ArrowObj.addClass(AngleObj["Class"]);
+			ArrowObj.offset( {"top" : yPos + yAdjustment, "left": xPos + xAdjustment} );
+		}
+		
+	
+		function GetAngleString(Angle) {
+			// Conversion: 	NW: -135	North -90	NE: -45
+			// 					West: 180       East: 0
+			//				SW: 135		South 90	SE: 45
+			var majorAngles = [0, 45, 90, 135, 180, -135, -90, -45],
+				majorDirections = [ 
+					{"Class": "arrow_n", 	"Angle": -90},
+					{"Class": "arrow_e", 	"Angle": 0},
+					{"Class": "arrow_s", 	"Angle": 90},
+					{"Class": "arrow_w", 	"Angle": 180},
+					{"Class": "arrow_ne",	"Angle": -45},
+					{"Class": "arrow_nw",	"Angle": -135},
+					{"Class": "arrow_se",	"Angle": 45},
+					{"Class": "arrow_sw",	"Angle": 135}
+				];
+			
+			// NormalizeAngle
+			var closestAngle = majorAngles.reduce(function(prev, curr) {
+				return (Math.abs(curr - Angle) < Math.abs(prev - Angle) ? curr : prev);
+			});
+
+			return _.find(majorDirections, function(obj) {
+				if(obj["Angle"] == closestAngle) {
+					return true;
+				}
+			});
+		}
+	
+		</script>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			html { 
+				background: #151511; 
+				background-image: url('bg.png'); 
+				background-size: auto; 
+				background-attachment: fixed; 
+				text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.75), 1px 2px 1px rgba(0, 0, 0, 0.5); 
+				font-family: "Einstein Futura PT Cond";
+			}
+			
+			body {
+				
+			}
+			
+			.title {
+				background-color: #040404;
+				color: #9F8974;
+				border-bottom: 2px solid #A8917B;
+				margin-bottom: 10px;
+				font-size: 28px;
+				font-weight: 550;
+				padding: 4px 200px;
+			}
+			
+			.container {
+				position: relative;
+				margin-left: 10px;
+			}
+			
+			.settings {
+				position: absolute;
+				left: 820px;
+				width: 200px;
+				height: 200px;
+				border: 2px solid #A8917B;
+				background-color: #060606;
+				color: #D5D5D8;
+			}
+			
+			.settings input {
+				margin: 3px;
+			}
+			
+			.settings label {
+				padding-left: 2px;
+			}
+
+			.image {
+				position: absolute;
+				width: 799px;
+				height: 740px;
+				border: 2px solid #A8917B;
+			}
+			
+			.imageBase {
+				z-index: 0;
+				background-image: URL('base.png')
+			}
+
+			.imageHighlight {
+				z-index: 10;
+				background-image: URL('highlight.png')
+			}
+			
+			.imageIcons {
+				z-index: 15;
+				background-image: URL('icons.png')
+			}
+
+			.imageNames {
+				z-index: 20;
+				background-image: URL('names.png')
+			}
+		
+			.imageFront {
+				z-index: 30;
+				background-image: URL('front.png')
+			}
+			
+			.imageSide {
+				z-index: 40;
+			}
+			
+			#crown {
+				position: absolute;
+				top: 300px;
+				left: 500px;
+				z-index: 1000;
+				border: 2px solid black;
+				border-radius: 50%;
+			}
+			#crown_inner_a {
+				border: 2px solid blue;
+				border-radius: 50%;
+			}
+			
+			#crown_inner_b {
+				border: 2px solid white;
+				border-radius: 50%;
+			}
+			
+			#crown_inner_c {
+				border: 2px solid black;
+				border-radius: 50%;
+				width: 25px;
+				height: 25px;
+			}
+			
+			#crown_arrow {
+			  width: 24px;
+			  height: 28px;
+			  padding: 0px;
+			  margin: 0px;
+			  background-image: url("arrow.png");
+			  position: absolute;
+			  top: 300px;
+			  left: 500px;
+			  z-index: 1001;
+			}
+
+			.arrow_n {
+				transform: rotate(0deg);
+			}
+			
+			.arrow_e {
+			  transform: rotate(90deg);
+			}
+			
+			.arrow_s {
+				transform: rotate(180deg);
+			}
+			
+			.arrow_w {
+			  transform: rotate(-90deg);
+			}
+
+
+			.arrow_nw {
+			  transform: rotate(-45deg);
+			}
+
+			.arrow_ne {
+			  transform: rotate(45deg);
+			}
+			
+			.arrow_sw {
+			  transform: rotate(-135deg);
+			}
+
+			.arrow_se {
+			  transform: rotate(135deg);
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="title">
+			Offliners ESO - Cyrodiil Map
+		</div>
+		<div class="container">
+			<div class="imageBase image"></div>
+			<div class="imageHighlight image"></div>
+			<div class="imageIcons image"></div>
+			<div class="imageNames image"></div>
+			<div class="imageFront image"></div>
+			<div class="imageSide image"></div>
+		</div>
+		<div class="settings">
+			<input type="checkbox" id="names" onclick="$('.imageNames').toggle();" checked="checked" /><label for="names">Keep Names</label> <br />
+			<input type="checkbox" id="names" onclick="$('.imageHighlight').toggle();" checked="checked" /><label for="names">Allegiance Highlight</label> <br />
+			<input type="checkbox" id="front" onclick="$('.imageFront').toggle();" checked="checked" /><label for="front">Front Doors</label> <br />
+			<input type="checkbox" id="side" onclick="$('.imageSide').toggle();" checked="checked" disabled="disabled" /><label for="front">Side Doors</label> <br />
+		</div>
+		<div id="crown"><div id="crown_inner_a"><div id="crown_inner_b"><div id="crown_inner_c"></div></div></div></div>
+		<div id="crown_arrow" class=""></div>
+	</body>
+	<script>
+		SetPosition({ x: 500, y: 100, angle: 135});
+	</script>
+</html>
