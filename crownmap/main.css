@@ -93,6 +93,7 @@ hr {
     z-index: 1000;
     border: 2px solid black;
     border-radius: 50%;
+    display: none;
 }
 #crown_inner_a {
     border: 2px solid blue;
@@ -121,6 +122,7 @@ hr {
   top: 300px;
   left: 500px;
   z-index: 1001;
+  display: none;
 }
 
 .arrow_n {

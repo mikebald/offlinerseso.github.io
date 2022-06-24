@@ -27,6 +27,7 @@
             arrowObj = $("#crown_arrow"),
             angleObj = innerThis.GetAngleString(angle);
 
+        crownObj.show();
         crownObj.offset({ "top": yPos, "left": xPos });
         innerThis.SetArrowPosition( arrowObj, xPos, yPos, angleObj );
     };
@@ -51,6 +52,7 @@
             yAdjustment = adjustmentObj["y"];
         }
 
+        ArrowObj.show();
         ArrowObj.removeClass();
         ArrowObj.addClass(AngleObj["Class"]);
         ArrowObj.offset( {"top" : yPos + yAdjustment, "left": xPos + xAdjustment} );
