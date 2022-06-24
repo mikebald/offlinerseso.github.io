@@ -44,8 +44,10 @@
 
         if( secondDifference > 10 ) {
             innerThis.onTrackingLostTick();
+            $("#favicon").attr("href","favicon_red.png");
         } else {
             $("#crown_trackinglost").hide()
+            $("#favicon").attr("href","favicon_green.png");
         }
 
     };
