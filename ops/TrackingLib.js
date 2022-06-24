@@ -11,7 +11,7 @@
         ws.addEventListener("open", innerThis.onOpen);
         ws.addEventListener('message', innerThis.onMessageReceived);
 
-        innerThis.previousTimestamp = Date.now() - 30000;
+        innerThis.timestamp = Date.now() - 30000;
         TrackingLib.onSanityTick();
         innerThis.sanityTimer = window.setInterval( function() {
             TrackingLib.onSanityTick();
@@ -33,22 +33,22 @@
     
         var obj = JSON.parse(string);
         PositioningLib.SetPosition(obj);
-        innerThis.previousTimestamp = Date.now();
+        innerThis.timestamp = Date.now();
     };
 
     _trackLib.prototype.onSanityTick = function() {
         // Check to see if the data is not stale
         var innerThis = TrackingLib,
             currentDate = Date.now(),
-            secondDifference = ( currentDate - innerThis.previousTimestamp) / 1000;
+            secondDifference = ( currentDate - innerThis.timestamp) / 1000;
 
         if( secondDifference > 10 ) {
             innerThis.onTrackingLostTick();
             $("#favicon").attr("href","favicon_red.png");
-            $("#pageTitle").html("OPS - Tracking Disabled");
+            $("#pageTitle").html("OPS - Tracking Lost");
         } else {
             $("#crown_trackinglost").hide()
-            $("#pageTitle").html("OPS - Tracking Enabled");
+            $("#pageTitle").html("OPS - Tracking Found");
             $("#favicon").attr("href","favicon_green.png");
         }
 
