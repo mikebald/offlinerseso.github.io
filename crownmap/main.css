@@ -1,0 +1,173 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html { 
+    background: #151511; 
+    background-image: url('bg.png'); 
+    background-size: auto; 
+    background-attachment: fixed; 
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.75), 1px 2px 1px rgba(0, 0, 0, 0.5); 
+    font-family: "Einstein Futura PT Cond";
+}
+
+body {
+    
+}
+
+.title {
+    background-color: #040404;
+    color: #9F8974;
+    border-bottom: 2px solid #A8917B;
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: 550;
+    padding: 4px 200px;
+}
+
+.container {
+    position: relative;
+    margin-left: 10px;
+}
+
+.settings {
+    position: absolute;
+    left: 820px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #A8917B;
+    background-color: #060606;
+    color: #D5D5D8;
+}
+
+hr {
+    border: 1px solid #A8917B;
+    margin: 4px;
+}
+
+.settings input {
+    margin: 3px;
+}
+
+.settings label {
+    padding-left: 2px;
+}
+
+.image {
+    position: absolute;
+    width: 799px;
+    height: 740px;
+    border: 2px solid #A8917B;
+}
+
+.imageBase {
+    z-index: 0;
+    background-image: URL('base.png')
+}
+
+.imageHighlight {
+    z-index: 10;
+    background-image: URL('highlight.png')
+}
+
+.imageIcons {
+    z-index: 15;
+    background-image: URL('icons.png')
+}
+
+.imageNames {
+    z-index: 20;
+    background-image: URL('names.png')
+}
+
+.imageFront {
+    z-index: 30;
+    background-image: URL('front.png')
+}
+
+.imageSide {
+    z-index: 40;
+}
+
+#crown {
+    position: absolute;
+    top: 300px;
+    left: 500px;
+    z-index: 1000;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+#crown_inner_a {
+    border: 2px solid blue;
+    border-radius: 50%;
+}
+
+#crown_inner_b {
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+#crown_inner_c {
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+#crown_arrow {
+  width: 24px;
+  height: 28px;
+  padding: 0px;
+  margin: 0px;
+  background-image: url("arrow.png");
+  position: absolute;
+  top: 300px;
+  left: 500px;
+  z-index: 1001;
+}
+
+.arrow_n {
+    transform: rotate(0deg);
+}
+
+.arrow_e {
+  transform: rotate(90deg);
+}
+
+.arrow_s {
+    transform: rotate(180deg);
+}
+
+.arrow_w {
+  transform: rotate(-90deg);
+}
+
+
+.arrow_nw {
+  transform: rotate(-45deg);
+}
+
+.arrow_ne {
+  transform: rotate(45deg);
+}
+
+.arrow_sw {
+  transform: rotate(-135deg);
+}
+
+.arrow_se {
+  transform: rotate(135deg);
+}
+
+#crown_trackinglost {
+    position: absolute;
+    z-index: 900;
+    top: 660px;
+    left: 50px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.534);
+    border: 2px solid #A8917B;
+    padding: 10px;
+    display: none;
+}
