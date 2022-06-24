@@ -45,8 +45,10 @@
         if( secondDifference > 10 ) {
             innerThis.onTrackingLostTick();
             $("#favicon").attr("href","favicon_red.png");
+            $("#pageTitle").html("OPS - Tracking Disabled");
         } else {
             $("#crown_trackinglost").hide()
+            $("#pageTitle").html("OPS - Tracking Enabled");
             $("#favicon").attr("href","favicon_green.png");
         }
 

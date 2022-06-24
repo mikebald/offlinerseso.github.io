@@ -14,7 +14,6 @@
             randomNumber = parseInt(Math.random() * (majorAngles.length - 1) + 1),
             randomAngle = majorAngles[randomNumber - 1];
     
-            console.log( randomNumber + " -- " + randomAngle);
             return { "x": 100, "y": 600, "angle": randomAngle }
     };
 
