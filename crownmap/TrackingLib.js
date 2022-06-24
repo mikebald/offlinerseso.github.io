@@ -11,7 +11,7 @@
         ws.addEventListener("open", innerThis.onOpen);
         ws.addEventListener('message', innerThis.onMessageReceived);
 
-        innerThis.previousTimestamp = Date.now() - 10000;
+        innerThis.previousTimestamp = Date.now() - 30000;
         TrackingLib.onSanityTick();
         innerThis.sanityTimer = window.setInterval( function() {
             TrackingLib.onSanityTick();
