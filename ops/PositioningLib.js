@@ -12,6 +12,7 @@
         innerThis.arrowObj =  $("#crown_arrow");
         innerThis.magnifierObj = $("#crown_magnifier");
         innerThis.baseImgObj = $("#baseImage");
+        innerThis.showMagnifier = false;
     }
 
     _posLib.prototype.GetWaitingPosition = function() {
@@ -24,7 +25,7 @@
 
     _posLib.prototype.ToggleMagnify = function() {
         var innerThis = PositioningLib;
-        innerThis.magnifierObj.toggle();
+        innerThis.showMagnifier = !innerThis.showMagnifier;
     };
 
     _posLib.prototype.SetPosition = function (PositionObj) {
@@ -35,16 +36,28 @@
             xImage = xPos - innerThis.baseImgObj.offset().left,
             yImage = yPos - innerThis.baseImgObj.offset().top,
             xMagnify = xImage * 2 - 94,
-            yMagnify = yImage * 2 - 94,
-            bgPosition = "-" + xMagnify + "px -" + yMagnify + "px";
-
+            yMagnify =  yImage * 2 - 94,
+            bgPosition = bgPosition = "-" + xMagnify + "px -" + yMagnify + "px";
 
         innerThis.crownObj.show();
         innerThis.crownObj.offset({ "top": yPos, "left": xPos });
         innerThis.SetArrowPosition( xPos, yPos, angle );
         
-        innerThis.magnifierObj.css({ "top": yPos - 110, "left": xPos - 110});
-        innerThis.magnifierObj.css({ "background-position": bgPosition});
+        if(innerThis.showMagnifier && xMagnify > 0 && yMagnify > 0 && (xPos != 100 && yPos != 600)) {
+            innerThis.magnifierObj.show();
+            innerThis.magnifierObj.css({ "top": yPos - 110, "left": xPos - 110});
+            innerThis.magnifierObj.css({ "background-position": bgPosition});
+        } else {
+            innerThis.magnifierObj.hide();
+        }
+
+        /*if($("#crown").is(':offscreen')) {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#crown").offset().top,
+                scrollLeft: $("#crown").offset().left - 200
+            }, 2000);
+        }*/
+        
     };
 
 
