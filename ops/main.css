@@ -31,7 +31,7 @@ html {
     position: absolute;
     left: 820px;
     width: 200px;
-    height: 200px;
+    height: 30px;
     border: 2px solid #A8917B;
     background-color: #060606;
     color: #D5D5D8;
@@ -55,32 +55,10 @@ hr {
     width: 799px;
     height: 740px;
     border: 2px solid #A8917B;
-}
-
-.imageBase {
     z-index: 0;
     background-image: URL('base.png')
 }
 
-.imageHighlight {
-    z-index: 10;
-    background-image: URL('highlight.png')
-}
-
-.imageIcons {
-    z-index: 15;
-    background-image: URL('icons.png')
-}
-
-.imageNames {
-    z-index: 20;
-    background-image: URL('names.png')
-}
-
-.imageFront {
-    z-index: 30;
-    background-image: URL('front.png')
-}
 
 .imageSide {
     z-index: 40;
@@ -167,5 +145,19 @@ hr {
     background-color: rgba(0, 0, 0, 0.534);
     border: 2px solid #A8917B;
     padding: 10px;
+    display: none;
+}
+
+#crown_magnifier {
+    position: absolute;
+    background-image: url("base.png");
+    background-size: 1598px 1480px;
+    background-repeat: no-repeat;
+    top: 250;
+    left: 250;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 1px solid black;
     display: none;
 }
