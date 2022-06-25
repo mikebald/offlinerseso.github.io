@@ -37,13 +37,20 @@
             yImage = yPos - innerThis.baseImgObj.offset().top,
             xMagnify = xImage * 2 - 94,
             yMagnify =  yImage * 2 - 94,
-            bgPosition = bgPosition = "-" + xMagnify + "px -" + yMagnify + "px";
+            xbgPosition = "-" + xMagnify + "px "
+            ybgPosition = "-" + yMagnify + "px",
+            bgPosition = "";
 
         innerThis.crownObj.show();
         innerThis.crownObj.offset({ "top": yPos, "left": xPos });
         innerThis.SetArrowPosition( xPos, yPos, angle );
         
-        if(innerThis.showMagnifier && xMagnify > 0 && yMagnify > 0 && (xPos != 100 && yPos != 600)) {
+        if(xMagnify < 0) xbgPosition = Math.abs(xMagnify) + "px ";
+        if(yMagnify < 0) ybgPosition = Math.abs(yMagnify) + "px";
+
+        bgPosition = xbgPosition + ybgPosition;
+
+        if(innerThis.showMagnifier && (xPos != 100 && yPos != 600)) {
             innerThis.magnifierObj.show();
             innerThis.magnifierObj.css({ "top": yPos - 110, "left": xPos - 110});
             innerThis.magnifierObj.css({ "background-position": bgPosition});
