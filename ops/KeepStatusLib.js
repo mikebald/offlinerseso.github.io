@@ -113,8 +113,8 @@
                 // Set Colors
                 $("#keepstatus_" + element["Name"]).attr('class', 'keep').addClass('keep_' + element["Owners"]);
                 // Set Under Attack
-                var lightID = [element["Type"], "ua" , element["SiegeStatus"], element["Name"]].join("_");
-                var heavyID = [element["Type"], "ua" , element["SiegeStatus"], element["Name"]].join("_");
+                var lightID = [element["Type"], "ua" , "light", element["Name"]].join("_");
+                var heavyID = [element["Type"], "ua" , "heavy", element["Name"]].join("_");
                 
                 if(element["SiegeStatus"] === "none") {
                     $("#" + lightID).hide();
@@ -122,12 +122,13 @@
                 } else {
                     // ex: #keep_ua_heavy_Roebeck, #outpost_ua_light_Harluns
                     var elementID = [element["Type"], "ua" , element["SiegeStatus"], element["Name"]].join("_");
-
-                    if(elementID === lightID) {
+                    
+                    if(element["SiegeStatus"] === "light") {
                         $("#" + heavyID).hide();
                     } else {
                         $("#" + lightID).hide();
                     }
+
                     $("#" + elementID).show();
                 }
             });
