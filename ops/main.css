@@ -56,9 +56,12 @@ hr {
     height: 740px;
     border: 2px solid #A8917B;
     z-index: 0;
-    background-image: URL('base.png')
+    /*background-image: URL('base_transparent.png')*/
 }
 
+#keepNames {
+    z-index: 5;
+}
 
 .imageSide {
     z-index: 40;
@@ -160,4 +163,78 @@ hr {
     border-radius: 50%;
     border: 1px solid black;
     display: none;
+}
+
+.keep {
+    width: 50px;
+    height: 50px; 
+    z-index: -10;
+    position: absolute;
+    background-color: white;
+}
+
+.keep_DC {
+    background-color: #698FB3;
+}
+
+.keep_AD {
+    background-color: #FDF278;
+}
+
+.keep_EP {
+    background-color: #DE5B4E;
+}
+
+.keep_ua_light {
+    display: none;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url("underattack/keep.png");
+    z-index: 2;
+}
+
+.keep_ua_heavy {
+    display: none;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url("underattack/keep.png");
+    z-index: 2;
+}
+
+.town_ua_light {
+    display: none;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url("underattack/town.png");
+    z-index: 2;
+}
+
+.town_ua_heavy {
+    display: none;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url("underattack/town.png");
+    z-index: 2;
+}
+
+.outpost_ua_light {
+    display: none;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url("underattack/outpost.png");
+    z-index: 2;
+}
+
+.outpost_ua_heavy {
+    display: none;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url("underattack/outpost.png");
+    z-index: 2;
 }

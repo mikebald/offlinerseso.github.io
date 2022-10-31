@@ -15,6 +15,7 @@
         innerThis.initializeTimestamp = Date.now();
         innerThis.timestamp = Date.now() - 30000;
         innerThis.webSocket = ws;
+        innerThis.messageData = {};
         TrackingLib.onSanityTick();
         innerThis.sanityTimer = window.setInterval( function() {
             TrackingLib.onSanityTick();
@@ -42,7 +43,9 @@
         if(string != "") {
             innerThis.timestamp = Date.now();
             var obj = JSON.parse(string);
+            innerThis.messageData = obj;
             PositioningLib.SetPosition(obj);
+            KeepStatusLib.Update(obj["keeps"]);
         }
     };
 
@@ -73,6 +76,7 @@
     _trackLib.prototype.onTrackingLostTick = function() {
         $("#crown_trackinglost").show();
         PositioningLib.SetPosition( PositioningLib.GetWaitingPosition() );
+        KeepStatusLib.Update(undefined);
     }
 
 

@@ -7,11 +7,13 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 		<script type="text/javascript" src="PositioningLib.js"></script>
 		<script type="text/javascript" src="TrackingLib.js"></script>
+		<script type="text/javascript" src="KeepStatusLib.js"></script>
 		<link rel="stylesheet" href="main.css">
 		<script>
 		$(function () {
 			PositioningLib.Initialize();
 			TrackingLib.Initialize();
+			KeepStatusLib.Initialize();
 		});
       
 		</script>
@@ -21,15 +23,22 @@
 			Offliners Positioning System
 		</div>
 		<div class="container">
-			<img id="baseImage" class="image" src="base.png" />
+			<img id="baseImage" class="image" src="base_transparent.png" />
+			<img id="keepNames" class="image" src="base_keepnames.png" />
 		</div>
 		<div class="settings">
-			<input type="checkbox" id="tracking" onclick="PositioningLib.ToggleMagnify();" /><label for="front">Crown Magnifier</label> <br />
+			<!-- <input type="checkbox" id="tracking" onclick="PositioningLib.ToggleMagnify();" /><label for="front">Crown Magnifier</label> <br /> -->
 		</div>
 		<div id="crown"><div id="crown_inner_a"><div id="crown_inner_b"><div id="crown_inner_c"></div></div></div></div>
 		<div id="crown_arrow" class=""></div>
 		<div id="crown_trackinglost">Crown Tracking Lost</div>
 		<div id="crown_magnifier"></div>
-		
+		<div id="keepstatus" class="keep" style="display: none"></div>
+		<div id="keep_ua_light" class="ua keep_ua_light" style="display: none"></div>
+		<div id="keep_ua_heavy" class="ua keep_ua_heavy" style="display: none"></div>
+		<div id="town_ua_light" class="ua town_ua_light" style="display: none"></div>
+		<div id="town_ua_heavy" class="ua town_ua_heavy" style="display: none"></div>
+		<div id="outpost_ua_light" class="ua outpost_ua_light" style="display: none"></div>
+		<div id="outpost_ua_heavy" class="ua outpost_ua_heavy" style="display: none"></div>
 	</body>
 </html>
