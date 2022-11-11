@@ -40,6 +40,7 @@ wss.on("connection", (ws, req) => {
         }
 
         if(typeof data["trackingid"] !== "undefined") {
+            ws.lastMessage = "TrackedID : " + data["trackingid"];
             ws.trackingID = data["trackingid"];
             return;
         }
