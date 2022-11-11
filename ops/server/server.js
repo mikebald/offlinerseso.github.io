@@ -28,7 +28,8 @@ wss.on("connection", (ws, req) => {
     ws.lastDate = (new Date());
     ws.ipAddress = req.headers['x-forwarded-for'].split(',')[0].trim();
     ws.city = req.headers['cf-ipcity']
-    ws.trackingID = "null"
+    ws.trackingID = undefined
+    ws.hostID = undefined
 
     ws.on("message", data => {
 
@@ -76,7 +77,7 @@ function writeClientUpdate() {
         count++;
         clients.push({
             "ID": client.id,
-            "Tracking": client.trackingID,
+            "Tracking": client.trackingID || client.hostID,
             "IP": client.ipAddress,
             "City": client.city,
             "Last Message": client.lastMessage
