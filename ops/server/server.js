@@ -39,9 +39,11 @@ wss.on("connection", (ws, req) => {
             return;
         }
 
-        if(typeof data["trackingid"] !== "undefined") {
-            ws.lastMessage = "TrackedID : " + data["trackingid"];
-            ws.trackingID = data["trackingid"];
+        const jsonData = JSON.parse(data);
+
+        if(jsonData["trackingid"] !== "undefined") {
+            ws.lastMessage = "TrackedID : " + jsonData["trackingid"];
+            ws.trackingID = jsonData["trackingid"];
             return;
         }
 
@@ -50,7 +52,7 @@ wss.on("connection", (ws, req) => {
         wss.clients.forEach(function each(client) {
            if (client !== ws && client.readyState === 1) { // Open Readystate
             
-            if(typeof data["hostid"] !== "undefined" && client.trackingID == data["hostid"]) {
+            if(typeof jsonData["hostid"] !== "undefined" && client.trackingID == jsonData["hostid"]) {
                 client.send(JSON.stringify(data));
             }
           
