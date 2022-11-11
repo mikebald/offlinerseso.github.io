@@ -7,7 +7,7 @@
 
     _posLib.prototype.Initialize = function () {
         var innerThis = PositioningLib;
-        innerThis.previousData = {"x": "N/A", "y": "N/A", "angle": "0", "strength": "0"}
+        innerThis.previousData = {"x": "N/A", "y": "N/A", "angle": "0"}
         innerThis.crownObj =  $("#crown");
         innerThis.arrowObj =  $("#crown_arrow");
         innerThis.magnifierObj = $("#crown_magnifier");
@@ -20,7 +20,7 @@
             randomNumber = parseInt(Math.random() * (majorAngles.length - 1) + 1),
             randomAngle = majorAngles[randomNumber - 1];
     
-            return { "x": 100, "y": 600, "angle": randomAngle, "strength": 15 }
+            return { "x": 100, "y": 600, "angle": randomAngle }
     };
 
     _posLib.prototype.ToggleMagnify = function() {
@@ -33,7 +33,6 @@
             xPos = PositionObj["x"],
             yPos = PositionObj["y"],
             angle = PositionObj["angle"],
-            strength = PositionObj["strength"],
             xImage = xPos - innerThis.baseImgObj.offset().left,
             yImage = yPos - innerThis.baseImgObj.offset().top,
             xMagnify = xImage * 2 - 94,
@@ -42,11 +41,11 @@
             ybgPosition = "-" + yMagnify + "px",
             bgPosition = "";
 
-        
         innerThis.crownObj.show();
         innerThis.crownObj.offset({ "top": yPos, "left": xPos });
-        innerThis.SetArrowPosition( xPos, yPos, angle, strength );
+        innerThis.SetArrowPosition( xPos, yPos, angle );
         
+        // 
         if(xMagnify < 0) xbgPosition = Math.abs(xMagnify) + "px ";
         if(yMagnify < 0) ybgPosition = Math.abs(yMagnify) + "px";
 
@@ -59,21 +58,12 @@
         } else {
             innerThis.magnifierObj.hide();
         }
-
-        /*if($("#crown").is(':offscreen')) {
-            $([document.documentElement, document.body]).animate({
-                scrollTop: $("#crown").offset().top,
-                scrollLeft: $("#crown").offset().left - 200
-            }, 2000);
-        }*/
-        
     };
 
 
-    _posLib.prototype.SetArrowPosition = function ( xPos, yPos, angle, strength) {
+    _posLib.prototype.SetArrowPosition = function ( xPos, yPos, angle) {
         var innerThis = PositioningLib,
             angleObj = innerThis.GetAngleString(angle),
-
             angleAdjustment = [ 
                 {"x": 9, 	"y": -25, 	"Angle": -90},
                 {"x": 40, 	"y": 7, 	"Angle": 0},
@@ -86,11 +76,6 @@
             ],
             yAdjustment = 0, xAdjustment = 0;				
 
-        if(strength === 0) {
-            innerThis.arrowObj.hide();
-            return;
-        }
-        
         adjustmentObj = _.find(angleAdjustment, function(obj) { return obj["Angle"] === angleObj["Angle"]; });
         
         if(typeof adjustmentObj !== "undefined") {

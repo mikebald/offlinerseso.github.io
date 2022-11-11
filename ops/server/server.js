@@ -21,23 +21,37 @@ wss.getUniqueID = function () {
 };
 
 // Creating connection using websocket
-wss.on("connection", ws => {
+wss.on("connection", (ws, req) => {
     // sending message
     ws.id = wss.getUniqueID();
     ws.lastMessage = "Connection : " + (new Date()).toLocaleTimeString('en-US');
+    ws.lastDate = (new Date());
+    ws.ipAddress = req.headers['x-forwarded-for'].split(',')[0].trim();
+    ws.city = req.headers['cf-ipcity']
+    ws.trackingID = "null"
 
     ws.on("message", data => {
 
         if(data == "Heartbeat") {
             ws.lastMessage = "Heartbeat : " + (new Date()).toLocaleTimeString('en-US');
+            ws.lastDate = (new Date());
             return;
         }
 
+        if(typeof data["trackingid"] !== "undefined") {
+            ws.trackingID = data["trackingid"];
+        }
+
         ws.lastMessage = "Data : "  + (new Date()).toLocaleTimeString('en-US');
+        ws.address = req.headers['True-Client-IP'] || req.socket.remoteAddress;
         
         wss.clients.forEach(function each(client) {
            if (client !== ws && client.readyState === 1) { // Open Readystate
-			client.send(JSON.stringify(data));
+            
+            if(typeof data["hostid"] !== "undefined" && client.trackingID == data["hostid"]) {
+                client.send(JSON.stringify(data));
+            }
+          
 		  }
 		});
     });
@@ -61,10 +75,18 @@ function writeClientUpdate() {
     wss.clients.forEach(function each(client) {
         count++;
         clients.push({
-            "State": (client.readyState === 1 ? "Open" : "Closed"),
             "ID": client.id,
+            "Tracking": client.trackingID,
+            "IP": client.ipAddress,
+            "City": client.city,
             "Last Message": client.lastMessage
         });
+
+        // Timeout
+        if( Math.floor(((new Date()) - clients.lastDate) / (1000*60)) > 2 ) {
+            client.close();
+        }
+
     });
 
     console.table(clients);

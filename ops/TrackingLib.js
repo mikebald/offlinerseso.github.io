@@ -12,6 +12,7 @@
         ws.addEventListener('message', innerThis.onMessageReceived);
         ws.addEventListener('close', innerThis.onClose);
 
+        innerThis.trackingID = "null";
         innerThis.initializeTimestamp = Date.now();
         innerThis.timestamp = Date.now() - 30000;
         innerThis.webSocket = ws;
@@ -20,6 +21,12 @@
         innerThis.sanityTimer = window.setInterval( function() {
             TrackingLib.onSanityTick();
         }, 1000);
+    };
+
+    _trackLib.prototype.SetTrackingID = function(trackingID) {
+        var innerThis = TrackingLib;
+        innerThis.trackingID = trackingID;
+        innerThis.webSocket.send("{ 'trackingID': '" + trackingID + "'}")
     };
 
     _trackLib.prototype.onOpen = function() {
@@ -81,18 +88,5 @@
 
 
     window.TrackingLib = new _trackLib();
-
-    // Filler
-    
-    jQuery.expr.filters.offscreen = function(el) {
-        var rect = el.getBoundingClientRect();
-        return (
-                 (rect.x + rect.width) < 0 
-                   || (rect.y + rect.height) < 0
-                   || (rect.x > window.innerWidth || rect.y > window.innerHeight)
-               );
-    };
-
-
 
 })(window, jQuery, _);
