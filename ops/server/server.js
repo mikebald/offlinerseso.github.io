@@ -77,7 +77,7 @@ function writeClientUpdate() {
         count++;
         clients.push({
             "ID": client.id,
-            "Tracking": client.trackingID || client.hostID,
+            "Tracking": client.trackingID,
             "IP": client.ipAddress,
             "City": client.city,
             "Last Message": client.lastMessage

@@ -24,9 +24,12 @@
     };
 
     _trackLib.prototype.SetTrackingID = function(trackingID) {
-        var innerThis = TrackingLib;
+        var innerThis = TrackingLib,
+            trackedObj = JSON.stringify({"trackingid": trackingID});
+
         innerThis.trackingID = trackingID;
-        innerThis.webSocket.send(JSON.stringify({"trackingID": trackingID}));
+        innerThis.webSocket.send(trackedObj);
+        console.log("Sent: " + trackedObj);
     };
 
     _trackLib.prototype.onOpen = function() {
