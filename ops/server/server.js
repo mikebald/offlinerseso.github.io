@@ -41,10 +41,14 @@ wss.on("connection", (ws, req) => {
 
         const jsonData = JSON.parse(data);
 
-        if(jsonData["trackingid"] !== "undefined") {
+        if(typeof jsonData["trackingid"] !== "undefined") {
             ws.lastMessage = "Track : " + jsonData["trackingid"];
             ws.trackingID = jsonData["trackingid"];
             return;
+        }
+
+        if(typeof jsonData["hostid"] !== "undefined") {
+            ws.hostID = jsonData["hostid"];
         }
 
         ws.lastMessage = "Data : "  + (new Date()).toLocaleTimeString('en-US');
