@@ -84,8 +84,8 @@ function writeClientUpdate() {
         count++;
         clients.push({
             "ID": client.id,
-            "Type": ( client.hostid !== undefined ? "Host" : "Client"),
-            "Tracking": ( client.hostid !== undefined ? client.hostid : client.trackingID),
+            "Type": ( client.hostID !== undefined ? "Host" : "Client"),
+            "Tracking": ( client.hostID !== undefined ? client.hostID : client.trackingID),
             "IP": client.ipAddress,
             "City": client.city,
             "Last Message": client.lastMessage
