@@ -42,7 +42,7 @@ wss.on("connection", (ws, req) => {
         const jsonData = JSON.parse(data);
 
         if(jsonData["trackingid"] !== "undefined") {
-            ws.lastMessage = "TrackedID : " + jsonData["trackingid"];
+            ws.lastMessage = "Track : " + jsonData["trackingid"];
             ws.trackingID = jsonData["trackingid"];
             return;
         }
@@ -80,7 +80,7 @@ function writeClientUpdate() {
         count++;
         clients.push({
             "ID": client.id,
-            "Tracking": client.trackingID,
+            "Tracking": client.trackingID || client.hostId,
             "IP": client.ipAddress,
             "City": client.city,
             "Last Message": client.lastMessage
