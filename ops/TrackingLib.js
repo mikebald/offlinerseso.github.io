@@ -26,7 +26,7 @@
     _trackLib.prototype.SetTrackingID = function(trackingID) {
         var innerThis = TrackingLib;
         innerThis.trackingID = trackingID;
-        innerThis.webSocket.send("{ 'trackingID': '" + trackingID + "'}")
+        innerThis.webSocket.send(JSON.stringify({"trackingID": trackingID}));
     };
 
     _trackLib.prototype.onOpen = function() {

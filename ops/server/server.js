@@ -41,11 +41,11 @@ wss.on("connection", (ws, req) => {
 
         if(typeof data["trackingid"] !== "undefined") {
             ws.trackingID = data["trackingid"];
+            return;
         }
 
         ws.lastMessage = "Data : "  + (new Date()).toLocaleTimeString('en-US');
-        ws.address = req.headers['True-Client-IP'] || req.socket.remoteAddress;
-        
+       
         wss.clients.forEach(function each(client) {
            if (client !== ws && client.readyState === 1) { // Open Readystate
             
