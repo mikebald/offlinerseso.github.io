@@ -13,6 +13,8 @@
         ws.addEventListener('close', innerThis.onClose);
 
         innerThis.trackingID = "null";
+        innerThis.trackingIDs = [];
+        innerThis.trackingIDInput = "#trackingID";
         innerThis.initializeTimestamp = Date.now();
         innerThis.timestamp = Date.now() - 30000;
         innerThis.webSocket = ws;
@@ -28,8 +30,27 @@
             trackedObj = JSON.stringify({"trackingid": trackingID});
 
         innerThis.trackingID = trackingID;
-        innerThis.webSocket.send(trackedObj);
-        console.log("Sent: " + trackedObj);
+
+        innerThis.waitForWSReady( function() {
+            innerThis.webSocket.send(trackedObj);
+            console.log("Sent: " + trackedObj);
+        });
+    };
+
+    _trackLib.prototype.LoadTrackingIDFromURL = function() {
+        var innerThis = TrackingLib,
+            urlParams = window.location.search;
+
+            if(urlParams.length > 0 && urlParams.indexOf("?") > -1) {
+                urlParams = urlParams.replace("?", "");
+                var trackingIDs = urlParams.split(",");
+                innerThis.trackingIDs = trackingIDs;
+            }
+
+            if(innerThis.trackingIDs.length > 0) {
+                $(innerThis.trackingIDInput).val(innerThis.trackingIDs[0]);
+                innerThis.SetTrackingID(innerThis.trackingIDs[0]);
+            }
     };
 
     _trackLib.prototype.onOpen = function() {
@@ -87,6 +108,21 @@
         $("#crown_trackinglost").show();
         PositioningLib.SetPosition( PositioningLib.GetWaitingPosition() );
         KeepStatusLib.Update(undefined);
+    };
+
+    _trackLib.prototype.waitForWSReady = function (callback) {
+        var innerThis = TrackingLib;
+        setTimeout(
+            function () {
+                if (innerThis.webSocket.readyState === 1) {
+                    if (callback != null){
+                        callback();
+                    }
+                } else {
+                    innerThis.waitForWSReady(callback);
+                }
+    
+            }, 10);
     }
 
 

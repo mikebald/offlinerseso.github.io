@@ -14,6 +14,7 @@
 			PositioningLib.Initialize();
 			TrackingLib.Initialize();
 			KeepStatusLib.Initialize();
+			TrackingLib.LoadTrackingIDFromURL();
 		});
       
 		</script>
@@ -29,7 +30,6 @@
 		<div class="settings">
 			<p>Please set your tracking ID provided by your group leader:</p>
 			<input type="text" id="trackingID" placeholder="Tracking ID" /> <button id="btnTracking" onclick="TrackingLib.SetTrackingID($('#trackingID').val());"> Set </button>
-			<!-- <input type="checkbox" id="tracking" onclick="PositioningLib.ToggleMagnify();" /><label for="front">Crown Magnifier</label> <br /> -->
 		</div>
 		<div id="crown"><div id="crown_inner_a"><div id="crown_inner_b"><div id="crown_inner_c"></div></div></div></div>
 		<div id="crown_arrow" class=""></div>
