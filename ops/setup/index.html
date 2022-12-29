@@ -6,62 +6,37 @@
     <meta name="fragment" content="!">
     <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta charset="UTF-8">
-    <style type="text/css">
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 400;
-            background-color: #1F2122;
-            color: #939393
-        }
-        h1 {
-            color: #EC6090;
-        }
-        ul {
-            background-color: #27292a;
-            padding: 40px;
-            border-radius: 23px;
-        }
-        li {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        code {
-            background-color: #FFFFB3;
-            color: black;
-            padding: 10px;
-            border-radius: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div id="md-all">
         <h1 id="offliners-cyrodiil-tracker-setup">Offliners Cyrodiil Tracker Setup</h1>
+        <br />
         <p><code>Please report any issues to @mikebald in ESO or mikebald#5934 on discord</code></p>
+        <br /><br />
         <p>To utilize OPS [Offliners Positioning System] found at <a href="https://offlinerseso.com/ops">https://offlinerseso.com/ops</a> you&#39;ll need multiple pieces to make that work. Below are a list of items you&#39;ll need:</p>
-        <h1 id="download-required-components">Download Required Components</h1>
+        <h2 id="download-required-components">Download Required Components</h2>
         <ul>
         <li>ESO Coordinate Capture :: <a href="https://github.com/mikebald/ESOCoordinateCapture/releases/tag/Releases">https://github.com/mikebald/ESOCoordinateCapture/releases/tag/Releases</a></li>
         <li>CyrodiilTracker Addon :: <a href="https://github.com/mikebald/ESO_CyrodiilTracker/releases/tag/Release">https://github.com/mikebald/ESO_CyrodiilTracker/releases/tag/Release</a></li>
         </ul>
-        <h1 id="optional-components">Optional Components</h1>
+        <h2 id="optional-components">Optional Components</h2>
         <p>  This may be needed if you experience issues running ESO Coordinate Capture</p>
         <ul>
         <li>Microsoft .Net Framework 4.8 Offline Installer : <a href="https://go.microsoft.com/fwlink/?linkid=2088631">https://go.microsoft.com/fwlink/?linkid=2088631</a></li>
         </ul>
-        <h1 id="install-steps">Install Steps</h1>
+        <h2 id="install-steps">Install Steps</h2>
         <ul>
         <li>Extract and install the CyrodiilTracker addon. If you&#39;re unfamiliar with installing addons manually, see : <a href="https://www.esoui.com/forums/faq.php?faq=install">https://www.esoui.com/forums/faq.php?faq=install</a></li>
         <li>Extract ESO Coordinate Capture wherever you please; Desktop is perfectly fine.</li>
         </ul>
-        <h1 id="what-now-">What now?</h1>
+        <h2 id="what-now-">What now?</h2>
         <ul>
         <li>OPS works by capturing the location data from the addon [located in the lower right of your screen in game] and providing that data to the OPS website. If you provide the tracking ID, or direct link, anyone can view the Group&#39;s Crown&#39;s movements on the website.</li>
         <li>Run ESO coordinate capture and be sure to change the Tracking ID. You can double click on the text field next to &quot;Tracking ID:&quot; to get one randomly generated, or you can use your own! Only AlphaNumeric characters are accepted, so cool it with &quot;E_S_O †r@Ck3R¡&quot;. I&#39;ve tried to make the ESO Coordinate Capture as idiot-proof as possible, but if you prove me wrong, let me know =D.</li>
         <li>Once you click the &quot;Set&quot; button, you have the OPS url copied to your clipboard, so you can paste that into Discord or ESO for your friends. Below are some Troubleshooting steps for different errors you may see.</li>
         </ul>
-        <h1 id="troubleshooting">Troubleshooting</h1>
+        <h2 id="troubleshooting">Troubleshooting</h2>
         <ul>
         <li><p>The Ingame Addon should show up like this:<br><img src="img/example_tracking.png" alt="In Game Display"><br>If the bottom line shows 0000000000, you can use the command <code>/ct reload</code> to reload the Crown Tracking.</p>
         </li>
